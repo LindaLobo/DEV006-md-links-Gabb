@@ -44,7 +44,7 @@ Con validate:true:
 Modulo instalable vía npm install 
 
 ## Autores ✒️❤️
-``
+
 * **Laboratoria**
 * **Linda Aguilar**
 
