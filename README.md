@@ -31,7 +31,7 @@ Con validate:true:
 
 * Ánimos de aprender
 * Paciencia
-*Confianza
+* Confianza
 
 ## Construido con 🛠️
 
