@@ -6,16 +6,18 @@ Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas
 El proyecto contiene una función la cual nos regresa una promesa que va a resolver un arreglo(Array) de objetos (Object), donde cada objeto representa un link y contiene las siguientes propiedades
 
 Con validate:false:
-    • href: URL encontrada.
-    • text: Texto que aparecía dentro del link (<a>).
-    • file: Ruta del archivo donde se encontró el link.
+
+    - href: URL encontrada.
+    - text: Texto que aparecía dentro del link (<a>).
+    - file: Ruta del archivo donde se encontró el link.
 
 Con validate:true:
-    • href: URL encontrada.
-    • text: Texto que aparecía dentro del link (<a>).
-    • file: Ruta del archivo donde se encontró el link.
-    • status: Código de respuesta HTTP.
-    • ok: Mensaje fail en caso de fallo u ok en caso de éxito.
+
+    - href: URL encontrada.
+    - text: Texto que aparecía dentro del link (<a>).
+    - file: Ruta del archivo donde se encontró el link.
+    - status: Código de respuesta HTTP.
+    - ok: Mensaje fail en caso de fallo u ok en caso de éxito.
 
 
 ## Comenzando 🚀
