@@ -1,5 +1,5 @@
 {
-  "name": "md-links",
+  "name": "md-links-linda",
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
@@ -8,5 +8,35 @@
     "createdAt": "2023-05-17T14:36:24.002Z",
     "version": "6.2.0",
     "commit": "6de8e2f7e38d779fd6845c63477977fb1eb3af99"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "recursive-readdir": "^2.2.3"
+  },
+  "description": "## Índice",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "open-coverage-report": "opener ./coverage/lcov-report/index.html",
+    "test:cobertura": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LindaLobo/DEV006-md-links-Gabb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LindaLobo/DEV006-md-links-Gabb/issues"
+  },
+  "homepage": "https://github.com/LindaLobo/DEV006-md-links-Gabb#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
   }
 }
