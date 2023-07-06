@@ -13,15 +13,15 @@ Para instalar:
     
 Para importarlo:
 
-    ```
+    
      const { mdLinks } = require("md-links-linda");
-    ```
+    
     
 Requerido para la funcionalidad se debe enviar el siguiente objeto de ejemplo:
 
-    ```
+    
     { validate: true, path: "nombre_del_archivo.md"}
-    ```
+    
     
 Con validate:false:
 
