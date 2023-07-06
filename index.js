@@ -1,9 +1,10 @@
 const { miPromesa } = require("./funciones.js");
 const { default: axios } = require("axios");
 
-function mdLinks(miPromesa, options) {
+const mdLinks = (options) => {
   return new Promise((resolver, rechazar) => {
-    miPromesa
+    let file = options.path;
+    miPromesa(file)
       .then((links) => {
         if (options && options.validate) {
           const linkPromises = links.map((link) =>
@@ -36,17 +37,6 @@ function mdLinks(miPromesa, options) {
         rechazar(error);
       });
   });
-}
+};
 
-const validate =  {validate:true}
-const resultado = mdLinks(miPromesa, validate);
-resultado
-  .then((result) => {
-    console.log(result)
-    // return result;
-  })
-  .catch((error) => {
-    return (error, "Existe algun problema");
-  });
-
-module.exports = {mdLinks}
+module.exports = { mdLinks };

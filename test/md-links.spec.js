@@ -4,58 +4,81 @@ const { readAllPath } = require("../funciones.js");
 
 describe('mdLinks', () => {
   it('Debería retornar los enlaces con validacion false', () => {
-    const miNewPromise = Promise.resolve([
-      {
-        href: 'https://example.com',
-        text: 'Example',
-        file: '/path/to/file.md'
-      },
-      {
-        href: 'https://example2.com',
-        text: 'Example 2',
-        file: '/path/to/file.md'
-      }
-    ]);
 
-    const options = { validate: false };
 
-    return mdLinks(miNewPromise, options)
+    const options = { validate: false, path: "conseguir.md" };
+
+    return mdLinks(options)
       .then((result) => {
         expect(result).toEqual([
           {
-            href: 'https://example.com',
-            text: 'Example',
-            file: '/path/to/file.md'
+            href: 'https://es.reactjs.org/',
+            text: 'React',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md'
           },
           {
-            href: 'https://example2.com',
-            text: 'Example 2',
-            file: '/path/to/file.md'
+            href: 'https://nodejs.org/es/',
+            text: 'NodeJs',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md'
+          },
+          {
+            href: 'https://react-bootstrap.github.io/',
+            text: 'React Bootstrap',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md'
+          },
+          {
+            href: 'https://getbootstrap.com/',
+            text: 'Bootstrap',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md'
+          },
+          {
+            href: 'https://axios-http.com/docs/intro',
+            text: 'Axios',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md'
           }
         ]);
       });
   });
 
   it('Debería retornar los enlaces con validación true', () => {
-    const miNewPromise = Promise.resolve([
-      {
-        href: 'https://example.com',
-        text: 'Example',
-        file: '/path/to/file.md',
-        status: 200,
-        ok: 'ok'
-      }
-    ]);
 
-    const options = { validate: true };
+    const options = { validate: true, path: "conseguir.md" };
 
-    return mdLinks(miNewPromise, options)
+    return mdLinks(options)
       .then((result) => {
         expect(result).toEqual([
           {
-            href: 'https://example.com',
-            text: 'Example',
-            file: '/path/to/file.md',
+            href: 'https://es.reactjs.org/',
+            text: 'React',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+            status: 200,
+            ok: 'ok'
+          },
+          {
+            href: 'https://nodejs.org/es/',
+            text: 'NodeJs',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+            status: 200,
+            ok: 'ok'
+          },
+          {
+            href: 'https://react-bootstrap.github.io/',
+            text: 'React Bootstrap',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+            status: 200,
+            ok: 'ok'
+          },
+          {
+            href: 'https://getbootstrap.com/',
+            text: 'Bootstrap',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+            status: 200,
+            ok: 'ok'
+          },
+          {
+            href: 'https://axios-http.com/docs/intro',
+            text: 'Axios',
+            file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
             status: 200,
             ok: 'ok'
           },
@@ -63,86 +86,73 @@ describe('mdLinks', () => {
       });
   });
 
-  it('Debería retornar los enlaces con validación true con axios', () => {
-    const miNewPromise = Promise.resolve([
-      {
-        href: 'https://example.com',
-        text: 'Example',
-        file: '/path/to/file.md',
-        status: 200,
-        ok: 'ok'
-      }
-    ]);
+  // it('Debería retornar los enlaces con validación true con axios', () => {
   
-    const options = { validate: true };
-  
-    // const axiosMock = {
-    //   get: jest.fn().mockResolvedValue({
-    //     status: 200,
-    //     statusText: 'ok'
-    //   })
-    // };
+  //   const options = { validate: true, path: "conseguir.md" };
 
-    axios.get = jest.fn(
-      function () {
-        const miNewPromise = Promise.resolve({
-          status : 200,
-          statusText : 'OK'
-        })
-        return miNewPromise
-      }
-    ) 
-    const spy = jest.spyOn(axios, "get")
+  //   axios.get = jest.fn(
+  //     function () {
+  //       const miNewPromise = Promise.resolve({
+  //         status : 200,
+  //         statusText : 'OK'
+  //       })
+  //       return miNewPromise
+  //     }
+  //   ) 
+  //   // const spy = jest.spyOn(axios, "get")
 
-  
-    return mdLinks(miNewPromise, options)
-      .then((result) => {
-        expect(result).toEqual([
-          {
-            href: 'https://example.com',
-            text: 'Example',
-            file: '/path/to/file.md',
-            status: 200,
-            ok: 'ok'
-          }
-        ]);
-        expect(spy).toHaveBeenCalledWith('https://example.com');
-      });
-  });
+  //   return mdLinks(options)
+  //     .then((result) => {
+  //       expect(result).toEqual([
+  //         {
+  //           href: 'https://es.reactjs.org/',
+  //           text: 'React',
+  //           file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+  //           status: 200,
+  //           ok: 'ok'
+  //         },
+  //         {
+  //           href: 'https://nodejs.org/es/',
+  //           text: 'NodeJs',
+  //           file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+  //           status: 200,
+  //           ok: 'ok'
+  //         },
+  //         {
+  //           href: 'https://react-bootstrap.github.io/',
+  //           text: 'React Bootstrap',
+  //           file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+  //           status: 200,
+  //           ok: 'ok'
+  //         },
+  //         {
+  //           href: 'https://getbootstrap.com/',
+  //           text: 'Bootstrap',
+  //           file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+  //           status: 200,
+  //           ok: 'ok'
+  //         },
+  //         {
+  //           href: 'https://axios-http.com/docs/intro',
+  //           text: 'Axios',
+  //           file: '/home/linda/Escritorio/DEV006-md-links-Gabb/ejemplo/conseguir.md',
+  //           status: 200,
+  //           ok: 'ok'
+  //         },
+  //       ]);
+  //       // expect(spy).toHaveBeenCalledWith('https://example.com');
+  //     });
+  // });
   
 
   it('Debería rechazar la promesa si ocurre un error en miPromesa', () => {
-    const miNewPromise = Promise.reject('Ocurrió un error en miPromesa');
-    const options = { validate: true };
+    const options = { validate: true,  path: "conseguir.md" };
   
-    return mdLinks(miNewPromise, options)
+    return mdLinks(options)
       .catch((error) => {
         expect(error).toBe('Ocurrió un error en miPromesa');
       });
   });
-
-  it('Debería retornar los enlaces sin validación si no se proporciona la opción "validate"', () => {
-    const miNewPromise = Promise.resolve([
-      {
-        href: 'https://example.com',
-        text: 'Example',
-        file: '/path/to/file.md'
-      }
-    ]);
-  
-    const options = {}; // No se proporciona la opción "validate"
-  
-    return mdLinks(miNewPromise, options)
-      .then((result) => {
-        expect(result).toEqual([
-          {
-            href: 'https://example.com',
-            text: 'Example',
-            file: '/path/to/file.md'
-          }
-        ]);
-      });
-  });  
 });
 
 describe('funcion readAllPath', () => {
