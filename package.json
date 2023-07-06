@@ -1,6 +1,6 @@
 {
   "name": "md-links-linda",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "node": ">=16.x"
   },
@@ -15,7 +15,7 @@
     "mocha": "^10.2.0",
     "recursive-readdir": "^2.2.3"
   },
-  "description": "## Índice",
+  "description": "revisar links",
   "main": "index.js",
   "directories": {
     "test": "test"
