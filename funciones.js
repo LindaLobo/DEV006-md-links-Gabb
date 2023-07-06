@@ -27,7 +27,7 @@ let miPromesa = (file) => {
   const directorioBase = __dirname.includes(path.resolve("node_modules"))
     ? path.dirname(path.dirname(__dirname))
     : __dirname;
-  console.log(directorioBase);
+  // console.log(directorioBase);
   const archivosEncontrados = readAllPath(directorioBase);
   const rutaArchivo = archivosEncontrados.find((ruta) => {
     const nombreArchivo = ruta.split("/").pop();

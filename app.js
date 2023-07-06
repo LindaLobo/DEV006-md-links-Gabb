@@ -1,5 +1,5 @@
 const {mdLinks} = require('./index.js')
-const validar = Boolean(process.argv[2])
+const validar = process.argv[2] === "true"
 const archivo = process.argv[3]
 
 const options = {validate:validar, path:archivo}
