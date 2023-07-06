@@ -7,9 +7,9 @@ El proyecto contiene una función la cual nos regresa una promesa que va a resol
 
 Para instalar:
 
-    ```
+
      npm i md-links-linda
-    ```
+    
     
 Para importarlo:
 
