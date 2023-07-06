@@ -6,17 +6,23 @@ Estos archivos Markdown normalmente contienen links (vínculos/ligas) que muchas
 El proyecto contiene una función la cual nos regresa una promesa que va a resolver un arreglo(Array) de objetos (Object), donde cada objeto representa un link y contiene las siguientes propiedades
 
 Para instalar:
+
     ```
      npm i md-links-linda
     ```
+    
 Para importarlo:
+
     ```
      const { mdLinks } = require("md-links-linda");
     ```
+    
 Requerido para la funcionalidad se debe enviar el siguiente objeto de ejemplo:
+
     ```
     { validate: true, path: "nombre_del_archivo.md"}
     ```
+    
 Con validate:false:
 
     - href: URL encontrada.
@@ -32,6 +38,7 @@ Con validate:true:
     - ok: Mensaje fail en caso de fallo u ok en caso de éxito.
 
 Ejemplo de ejecución:
+
     ```
     mdLinks({validate:validando,path:archivo})
         .then((result) => {
@@ -41,6 +48,7 @@ Ejemplo de ejecución:
           return (error, "Existe algun problema");
         });
     ```
+    
 ## Comenzando 🚀
 
 * Revisar la información entregada.
